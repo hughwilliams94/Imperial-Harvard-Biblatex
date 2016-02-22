@@ -1,0 +1,48 @@
+\documentclass{article}
+
+\usepackage{lipsum}
+\usepackage{filecontents}
+
+\begin{filecontents}{jobname.bib}
+@article{Aoki1998,
+  title = {A human liver cell line exhibits efficient translation of {{HCV RNAs}} produced by a recombinant adenovirus expressing {{T7 RNA}} polymerase.},
+  volume = {250},
+  url = {http://www.sciencedirect.com/science/article/pii/S0042682298993618},
+  doi = {10.1006/viro.1998.9361},
+  number = {1},
+  journaltitle = {Virology},
+  author = {Aoki, Y and Aizaki, H and Shimoike, T and Tani, H and Ishii, K and Saito, I and Matsuura, Y and Miyamura, T},
+  urldate = {2016-02-01},
+  date = {1998-10},
+  pages = {140--50}
+}
+\end{filecontents}
+
+\usepackage[backend=biber,
+      style=authoryear,
+      uniquelist=false,
+      firstinits=true,
+      isbn=false,
+      maxbibnames=99,
+      sorting=nty,
+      uniquename=init,
+      url=true,
+      urldate=long,
+      dateabbrev=false,
+      ]{biblatex}
+\usepackage[colorlinks=true,
+      allcolors=blue
+]{hyperref}
+\usepackage{cleveref}
+
+\bibliography{jobname.bib}
+
+%%%%%%Formatting%%%%%%%
+\setlength{\bibhang}{0pt}
+\setlength\bibitemsep{1.5\itemsep}
+\newcommand{\acite}{\autocite}
+
+\begin{document}
+      \lipsum[2] \acite{Aoki1998}
+      \printbibliography
+\end{document}
