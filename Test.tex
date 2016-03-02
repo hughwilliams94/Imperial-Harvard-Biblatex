@@ -2,6 +2,7 @@
 
 \usepackage{lipsum}
 \usepackage{filecontents}
+\usepackage[backend=biber,style=imperialharvard]{biblatex}
 
 \begin{filecontents}{jobname.bib}
 @article{Smith1998,
@@ -18,31 +19,9 @@
 }
 \end{filecontents}
 
-\usepackage[backend=biber,
-      style=authoryear,
-      uniquelist=false,
-      firstinits=true,
-      isbn=false,
-      maxbibnames=99,
-      sorting=nty,
-      uniquename=init,
-      url=true,
-      urldate=long,
-      dateabbrev=false,
-      ]{biblatex}
-\usepackage[colorlinks=true,
-      allcolors=blue
-]{hyperref}
-\usepackage{cleveref}
-
 \bibliography{jobname.bib}
 
-%%%%%%Formatting%%%%%%%
-\setlength{\bibhang}{0pt}
-\setlength\bibitemsep{1.5\itemsep}
-\newcommand{\acite}{\autocite}
-
 \begin{document}
-      \lipsum[2] \acite{Smith1998}
+      \lipsum[2] \autocite{Smith1998}
       \printbibliography
 \end{document}
