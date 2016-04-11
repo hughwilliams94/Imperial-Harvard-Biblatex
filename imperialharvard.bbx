@@ -13,6 +13,7 @@
 	dateabbrev	=false		,
   }
 
+%%%%%%%%INDENTATION OF BIBLIOGRAPHY%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setlength{\bibhang}{0pt}
 \setlength\bibitemsep{1.5\itemsep}
 
@@ -24,14 +25,15 @@
 %%%%%%%%BIBLIOGRAPHY SORTING%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \DeclareNameAlias{sortname}{last-first}
 
-\DeclareFieldFormat{pages}{#1}
-\DeclareFieldFormat*{title}{#1}
-\DeclareFieldFormat{url}{\bibstring{available}\addcolon\space\url{#1}\nopunct}
-\DeclareFieldFormat{urldate}{[\bibstring{urlseen}\space#1]}
-\DeclareFieldFormat[article]{number}{\mkbibparens{#1}}
+%%%%%%%%FIELD FORMATS%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DeclareFieldFormat{pages}{#1} %removes pp
+\DeclareFieldFormat*{title}{#1} %Article titles without italics, journal name with
+\DeclareFieldFormat{url}{\bibstring{available}\addcolon\space\url{#1}\nopunct} %changes url to to newly defined Available from
+\DeclareFieldFormat{urldate}{[\bibstring{urlseen}\space#1]} %changes urldate to Accessed
+\DeclareFieldFormat[article]{number}{\mkbibparens{#1}} %Issue number in parentheses
 \DeclareFieldFormat{doi}{%
 	\bibstring{urlfrom}\addcolon\space\mkbibacro{DOI}\addcolon\space \ifhyperref {\href{http://dx.doi.org/#1}{\nolinkurl{#1}}} {\nolinkurl{#1}}
-    }
+    } %Formats URL display
 
 \renewbibmacro*{journal+issuetitle}{%
   \usebibmacro{journal}%
@@ -46,24 +48,21 @@
   \usebibmacro{issue+date}%
   \setunit{\addcolon\space}%
   \usebibmacro{issue}%
-  \newunit}
+  \newunit} %Inserts appropriate period between fields
 \renewbibmacro*{doi+eprint+url}{%
  \iftoggle{bbx:url} {\iffieldundef{doi}{\usebibmacro{url+urldate}}{}} {}%
  \newunit\newblock \iftoggle{bbx:eprint} {\usebibmacro{eprint}} {}%
  \newunit\newblock \iftoggle{bbx:doi} {\printfield{doi}\printtext[abrufurl]{\printurldate}} {}
- }
+ } %Displays only DOI if both DOI and URL are available
 \renewbibmacro*{url+urldate}{%
     \printtext[formaturl]{%
    	\printfield{url}}%
-	}
-\renewbibmacro*{in:}{}
+	} %Prints date accessed
+\renewbibmacro*{in:}{} %Removes In:
 \renewbibmacro*{volume+number+eid}{
     \printfield{volume}%
     \setunit*{\addnbthinspace}
     \printfield{number}%
     \setunit{\addcomma\space}%
-    \printfield{eid}}
+    \printfield{eid}} %Formats Volume and Issue fields
 
-\renewcommand*{\nameyeardelim}{\addcomma\addspace}
-\renewcommand*{\finalnamedelim}{\addspace\&\space}
-\renewcommand{\labelnamepunct}{\addspace}
