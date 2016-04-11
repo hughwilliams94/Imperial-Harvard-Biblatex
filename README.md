@@ -1,5 +1,7 @@
 # Imperial-Harvard
 
+![Reference example](https://github.com/hughwilliams94/Imperial-Harvard/blob/master/Example.png?raw=true)
+
 Biblatex styling for the Imperial College London - Harvard referencing style. The `.bbx`/ `.cbx` are based on `authoryear` and provide the biblatex style `imperialharvard`. I also inlcude a .cls file, biblatex.cfg modification or preamble section if the use of the style files is too much effort for you.
 
 ## Usage
