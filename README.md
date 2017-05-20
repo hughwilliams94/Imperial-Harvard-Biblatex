@@ -10,7 +10,7 @@ To utilise the `.bbx`/ `.cbx` just place the `biblatex-imperial` folder into you
 
 These files provide adjustments to various aspects of both the in-text citations and reference list in order to comply with the guidelines provided by the Imperial College library service, which can be viewed [here](https://www.imperial.ac.uk/media/imperial-college/administration-and-support-services/library/public/harvard.pdf). The .cls file is suitable for one off uses and calls the normal article class with a4 paper and 11pt and then adds the necessary packages and bibliography adjustments. It should be included in your document's working directory and called as `\documentclass{Main}` in the preamble.
 
-If you are only using this referencing style a more permanent and functional adjustment is the use of the biblatex.cfg file. Just modify the Biblatex.cfg file of your local Latex installation e.g. `/usr/local/texlive/2015/texmf-dist/tex/latex/biblatex/biblatex.cfg`. The commands included can also been inserted directly into the document preamble if you want to keep a clean biblatex.cfg for multiple stylings.
+If you are only using this referencing style a more permanent and functional adjustment is the use of the biblatex.cfg file. Just modify the Biblatex.cfg file of your local Latex installation e.g. `/usr/local/texlive/20XX/texmf-dist/tex/latex/biblatex/biblatex.cfg`. The commands included can also been inserted directly into the document preamble if you want to keep a clean biblatex.cfg for multiple stylings.
 
 The included .tex and .bib file provides a MWE to show the capability of the modifications.
 
