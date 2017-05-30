@@ -15,3 +15,10 @@
 \renewcommand*{\nameyeardelim}{\addcomma\addspace}
 \renewcommand*{\finalnamedelim}{\addspace\&\space}
 \renewcommand{\labelnamepunct}{\addspace}
+
+%%%%%%%%Formats DOI entries%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand*{\mkbibacro}[1]{%
+  \csundef{\f@encoding/mdbch/\f@series/sc}%
+  \ifcsundef{\f@encoding/\f@family/\f@series/sc}
+    {#1}
+    {\texttt{\MakeUppercase{#1}}}}
