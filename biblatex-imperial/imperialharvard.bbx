@@ -32,7 +32,7 @@
 \DeclareFieldFormat{urldate}{[\bibstring{urlseen}\space#1]} %changes urldate to Accessed
 \DeclareFieldFormat[article]{number}{\mkbibparens{#1}} %Issue number in parentheses
 \DeclareFieldFormat{doi}{%
-	\bibstring{urlfrom}\addcolon\space\mkbibacro{DOI}\addcolon\space \ifhyperref {\href{http://dx.doi.org/#1}{\nolinkurl{#1}}} {\nolinkurl{#1}}
+	\bibstring{urlfrom}\addcolon\space\mkbibacro{DOI}\addcolon\space \ifhyperref {\href{https://doi.org/#1}{\nolinkurl{#1}}} {\nolinkurl{#1}}
     } %Formats URL display
 
 \renewbibmacro*{journal+issuetitle}{%
