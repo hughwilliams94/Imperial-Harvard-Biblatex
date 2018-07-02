@@ -45,7 +45,7 @@
 \DeclareFieldFormat{urldate}{[\bibstring{urlseen}\space#1]}
 \DeclareFieldFormat[article]{number}{\mkbibparens{#1}}
 \DeclareFieldFormat{doi}{%
-	\bibstring{urlfrom}\addcolon\space\mkbibacro{DOI}\addcolon\space \ifhyperref {\href{http://dx.doi.org/#1}{\nolinkurl{#1}}} {\nolinkurl{#1}}
+	\bibstring{urlfrom}\addcolon\space\mkbibacro{DOI}\addcolon\space \ifhyperref {\href{https://doi.org/#1}{\nolinkurl{#1}}} {\nolinkurl{#1}}
     }
 
 %%%%%%%%VOLUME ISSUE FORMAT ADJUSTMENTS%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
