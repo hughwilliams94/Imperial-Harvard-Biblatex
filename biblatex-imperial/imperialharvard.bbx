@@ -5,7 +5,7 @@
 
 \ExecuteBibliographyOptions
   {
-	firstinits	=true		,
+	giveninits	=true		,
 	isbn		=false		,
 	maxbibnames	=99			,
 	sorting		=nty		,
@@ -27,13 +27,15 @@
 
 %%%%%%%%FIELD FORMATS%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \DeclareFieldFormat{pages}{#1} %removes pp
-\DeclareFieldFormat*{title}{#1} %Article titles without italics, journal name with
+\DeclareFieldFormat*[article]{title}{#1} %Article titles without italics, journal name with
 \DeclareFieldFormat{url}{\bibstring{available}\addcolon\space\url{#1}\nopunct} %changes url to to newly defined Available from
 \DeclareFieldFormat{urldate}{[\bibstring{urlseen}\space#1]} %changes urldate to Accessed
 \DeclareFieldFormat[article]{number}{\mkbibparens{#1}} %Issue number in parentheses
 \DeclareFieldFormat{doi}{%
 	\bibstring{urlfrom}\addcolon\space\mkbibacro{DOI}\addcolon\space \ifhyperref {\href{https://doi.org/#1}{\nolinkurl{#1}}} {\nolinkurl{#1}}
     } %Formats URL display
+
+%\DeclareFieldFormat[book]{location}{\addcomma\nopunct{#1}}%test
 
 \renewbibmacro*{journal+issuetitle}{%
   \usebibmacro{journal}%
@@ -66,3 +68,12 @@
     \setunit{\addcomma\space}%
     \printfield{eid}} %Formats Volume and Issue fields
 
+\renewbibmacro*{publisher+location+date}{%correct punctuation for book style with location
+  \printlist{location}%
+  \iflistundef{publisher}
+    {\setunit*{\addcomma\space}}
+    {\setunit*{\addcomma\space}}%
+  \printlist{publisher}%
+  \setunit*{\addcomma\space}%
+  \usebibmacro{date}%
+  \newunit}
